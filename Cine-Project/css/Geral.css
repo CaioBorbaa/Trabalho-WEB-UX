@@ -1,0 +1,27 @@
+body {
+  background-color: rgb(54, 52, 52);
+  color: white;
+  margin: 0;
+}
+
+/* Torna o header um flexbox horizontal */
+.containner {
+  display: flex;
+  align-items: center;
+  padding: 0%;
+  background-color: rgb(54, 52, 52); /* mesma cor do fundo */
+}
+
+/* Ajusta o tamanho da imagem */
+.logo {
+  height: 200px;
+  margin-right: 0px;
+}
+
+/* Menu de links */
+.menu a {
+  margin-right: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
