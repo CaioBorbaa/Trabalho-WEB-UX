@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrar-se</title>
+    <link rel="stylesheet" href="/Cine-Project/css/Geral.css" />
+    <link rel="stylesheet" href="/Cine-Project/css/Registrar.css">
+  </head>
+  <body>
+    <header class="containner">
+      <div id="banner">
+        <img
+          src="/Cine-Project/assets/images/WorldMovies - Logo..png"
+          alt=""
+          class="logo"
+        />
+      </div>
+      <nav class="menu">
+        <a href="/Cine-Project/pages/Home.html">Home</a>
+        <a href="/Cine-Project/pages/EmBreve.html">Em breve</a>
+        <a href="/Cine-Project/pages/Promocoes.html">Promoções</a>
+        <a href="/Cine-Project/pages/FAQ.html">FAQ</a>
+      </nav>
+      <!-- Área de login/registro -->
+      <div class="login">
+        <a href="/Cine-Project/pages/Entrar.html">Entrar</a>
+        <a href="/Cine-Project/pages/Registrar.html">Registrar-se</a>
+      </div>
+    </header>
+
+    <!-- Fundo escurecido e embaçado -->
+    <div class="fundo">
+      <!-- Caixa de registro centralizada -->
+      <div class="caixa-registro">
+        <h2>Registrar-se</h2>
+        <form>
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" placeholder="Digite seu nome completo" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Digite seu email" required />
+
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" placeholder="Digite sua senha" required />
+
+          <label for="confirmaSenha">Confirmar Senha</label>
+          <input
+            type="password"
+            id="confirmaSenha"
+            placeholder="Confirme sua senha"
+            required
+          />
+
+          <button type="submit">Registrar</button>
+        </form>
+        <p>
+          Já tem uma conta? <a href="/Cine-Project/pages/Entrar.html">Entrar</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
