@@ -1,29 +1,39 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(54, 52, 52);
   color: white;
-  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-/* Torna o header um flexbox horizontal */
+main {
+  flex: 1;
+}
+
+/* Header */
 .containner {
   display: flex;
   align-items: center;
-  padding: 0%;
-  background-color: rgb(54, 52, 52); /* mesma cor do fundo */
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: rgb(54, 52, 52);
 }
 
-/* Ajusta o tamanho da imagem */
 .logo {
   height: 200px;
-  margin-right: 0px;
 }
 
-/* Menu de links */
+/* Menu */
 .menu a {
   margin-right: 20px;
   color: white;
@@ -39,11 +49,12 @@ body {
   font-weight: bold;
 }
 
-.auth-links a:hover,
-.menu a:hover {
+.menu a:hover,
+.login a:hover {
   text-decoration: underline;
 }
 
+/* Filmes */
 .filmes {
   padding: 40px 20px;
   text-align: center;
@@ -87,7 +98,7 @@ body {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 12px;
-  background-color: #ef6c07; /* cor oficial site cinema */
+  background-color: #ef6c07;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -96,10 +107,10 @@ body {
 }
 
 .botao-saiba-mais:hover {
-  background-color: #ef6c07; /* cor oficial site cinema */
+  background-color: #d95d00;
 }
 
-/* Modal escondido por padrão */
+/* Modal */
 .modal-toggle {
   display: none;
 }
@@ -117,7 +128,6 @@ body {
   z-index: 1000;
 }
 
-/* Exibir modal quando checkbox estiver marcado */
 .modal-toggle:checked + .modal {
   display: flex;
 }
@@ -150,12 +160,14 @@ body {
   left: 0;
 }
 
+/* Rodapé */
 .rodape {
-  color: #000000;
+  color: #333;
   background-color: bisque;
-  padding: 24px;
+  padding: 10px 16px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
+  word-break: break-word;
 }
