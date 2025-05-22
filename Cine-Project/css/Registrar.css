@@ -50,14 +50,14 @@ body {
   .caixa-registro button {
     width: 100%;
     padding: 10px;
-    background-color: #28a745;
+    background-color: #d95d00;
     color: white;
     border: none;
     border-radius: 4px;
   }
   
   .caixa-registro button:hover {
-    background-color: #218838;
+    background-color: #d95d00;
   }
   
   .caixa-registro p {
@@ -65,7 +65,7 @@ body {
   }
   
   .caixa-registro a {
-    color: #28a745;
+    color: #d95d00;
     text-decoration: none;
   }
   
