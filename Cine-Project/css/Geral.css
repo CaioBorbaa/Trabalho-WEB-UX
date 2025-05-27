@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 html, body {
   height: 100%;
 }
@@ -15,6 +16,12 @@ body {
   color: white;
   font-family: Arial, sans-serif;
 }
+
+#COMING{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  }
 
 main {
   flex: 1;
@@ -164,7 +171,7 @@ main {
   z-index: 1000;
 }
 
-.modal-toggle:checked + .modal {
+.modal-toggle:checked ~ .modal {
   display: flex;
 }
 
