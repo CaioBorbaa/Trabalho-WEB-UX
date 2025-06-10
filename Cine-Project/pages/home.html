@@ -44,75 +44,31 @@
         <div class="filme">
           <img src="../assets/images/beekeeper.jpg" alt="Filme 1" />
           <h3>Beekeeper</h3>
-          <label for="modal-filme1" class="botao-saiba-mais">Saiba mais</label>
-          <input type="checkbox" id="modal-filme1" class="modal-toggle" />
-          <div class="modal">
-            <label for="modal-filme1" class="modal-fundo"></label>
-            <div class="modal-conteudo">
-              <label for="modal-filme1" class="modal-fechar">×</label>
-              <h3>The Beekeeper</h3>
-              <p>As ações brutais de vingança de um homem assume riscos de proporções nacionais quando é revelado que ele é um ex-agente de uma organização poderosa e clandestina.</p>
-            </div>
-          </div>
+          <button class="botao-saiba-mais">Saiba mais</button>
         </div>
 
         <div class="filme">
-          <img src="../assets/images/premonicao6.jpg" alt="Filme 2" />
+          <img src="../assets/images/premonicaoo.jpg" alt="Filme 2" />
           <h3>Premonição 6</h3>
-          <label for="modal-filme2" class="botao-saiba-mais">Saiba mais</label>
-          <input type="checkbox" id="modal-filme2" class="modal-toggle" />
-          <div class="modal">
-            <label for="modal-filme2" class="modal-fundo"></label>
-            <div class="modal-conteudo">
-              <label for="modal-filme2" class="modal-fechar">×</label>
-              <h3>Premonição 6</h3>
-              <p>Atormentada por um pesadelo violento e recorrente, uma estudante universitária volta para casa em busca da única pessoa que pode ser capaz de quebrar o ciclo de morte e salvar sua família do terrível destino que inevitavelmente os aguarda.</p>
-            </div>
-          </div>
+          <button class="botao-saiba-mais">Saiba mais</button>
         </div>
 
         <div class="filme">
           <img src="../assets/images/joker.jpg" alt="Filme 3" />
           <h3>Joker</h3>
-          <label for="modal-filme3" class="botao-saiba-mais">Saiba mais</label>
-          <input type="checkbox" id="modal-filme3" class="modal-toggle" />
-          <div class="modal">
-            <label for="modal-filme3" class="modal-fundo"></label>
-            <div class="modal-conteudo">
-              <label for="modal-filme3" class="modal-fechar">×</label>
-              <h3>Joker</h3>
-              <p>Isolado, intimidado e desconsiderado pela sociedade, o fracassado comediante Arthur Fleck inicia seu caminho como uma mente criminosa após assassinar três homens em pleno metrô. Sua ação inicia um movimento popular contra a elite de Gotham City, da qual Thomas Wayne é seu maior representante.</p>
-            </div>
-          </div>
+          <button class="botao-saiba-mais">Saiba mais</button>
         </div>
 
         <div class="filme">
           <img src="../assets/images/avengersendgame.jpg" alt="Filme 4" />
           <h3>Avengers</h3>
-          <label for="modal-filme4" class="botao-saiba-mais">Saiba mais</label>
-          <input type="checkbox" id="modal-filme4" class="modal-toggle" />
-          <div class="modal">
-            <label for="modal-filme4" class="modal-fundo"></label>
-            <div class="modal-conteudo">
-              <label for="modal-filme4" class="modal-fechar">×</label>
-              <h3>Avengers</h3>
-              <p></p>
-            </div>
-          </div>
+          <button class="botao-saiba-mais">Saiba mais</button>
         </div>
+
         <div class="filme">
           <img src="../assets/images/guardioesdagalaxia.jpg" alt="Filme 5" />
           <h3>Guardiões Das Galaxias</h3>
-          <label for="modal-filme5" class="botao-saiba-mais">Saiba mais</label>
-          <input type="checkbox" id="modal-filme5" class="modal-toggle" />
-          <div class="modal">
-            <label for="modal-filme5" class="modal-fundo"></label>
-            <div class="modal-conteudo">
-              <label for="modal-filme5" class="modal-fechar">×</label>
-              <h3>Guardiões Das Galaxias</h3>
-              <p></p>
-            </div>
-          </div>
+          <button class="botao-saiba-mais">Saiba mais</button>
         </div>
       </div>
     </main>
@@ -120,6 +76,34 @@
     <footer class="rodape">
       <p>Desenvolvido por André Felipe e Caio Borba.</p>
     </footer>
+
+    <div id="alerta" class="alerta">
+      <p class="mensagem-alerta">Em breve mais informações sobre este filme!</p>
+      <button class="btn-alerta" onclick="fecharAlerta()">OK</button>
+    </div>
+
+    <script>
+  // Seleciona todos os elementos com a classe "botao-saiba-mais"
+  const botoes = document.querySelectorAll(".botao-saiba-mais");
+
+  // Para cada botão, adiciona o evento de clique
+  botoes.forEach(function(botao) {
+    botao.onclick = function() {
+      alert("Em breve mais informações sobre este filme!");
+    };
+  });
+
+  function mostrarAlerta(mensagem) {
+    const alerta = document.getElementById("alerta");
+    const texto = alerta.querySelector(".mensagem-alerta");
+    texto.textContent = mensagem; // Modifica a mensagem conforme o texto passado
+    alerta.style.display = "block"; // Exibe o alerta
+  }
+
+  
+</script>
+
+
   </body>
 </html>
 
