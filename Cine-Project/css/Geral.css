@@ -75,6 +75,33 @@ main {
   border-color: #d95d00;
 }
 
+.carrinho-icone a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.carrinho {
+  position: fixed;
+  right: 20px;
+  top: 100px;
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 0 10px #000;
+  display: none;
+  z-index: 10000;
+}
+
+.carrinho ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
 
 /* Menu */
 .menu a {
@@ -136,72 +163,6 @@ main {
 .filme:hover {
   transform: scale(1.05);
 }
-
-.botao-saiba-mais {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #ef6c07;
-  color: white;
-  text-decoration: none;
-  border-radius: 9px;
-  font-weight: bold;
-  transition: background-color 0.3s;
-  border: none;
-}
-
-
-.botao-saiba-mais:hover {
-  background-color: #000000;
-}
-
-.alerta {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #1e1e1e;
-  color: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  z-index: 9999;
-  width: 300px;
-  text-align: center;
-  display: none;
-  animation: fadeIn 0.3s ease;
-}
-
-.alerta .icone {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
-.alerta .mensagem-alerta {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.btn-alerta {
-  padding: 10px 20px;
-  background-color: #ff3c38;
-  border: none;
-  color: white;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.btn-alerta:hover {
-  background-color: #e6322e;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, -60%); }
-  to { opacity: 1; transform: translate(-50%, -50%); }
-}
-
 
 /* Rodapé */
 .rodape {

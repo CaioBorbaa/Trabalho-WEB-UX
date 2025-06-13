@@ -28,6 +28,11 @@
           <button type="submit" class="search-button">Buscar</button>
         </form>
       </div>
+
+      <div class="carrinho-icone">
+        <a href="#" onclick="mostrarCarrinho()">🛒 Ingressos (<span id="contador-carrinho">0</span>)</a>
+      </div>
+      
       
 
       <!-- Área de login/registro -->
@@ -44,66 +49,100 @@
         <div class="filme">
           <img src="../assets/images/beekeeper.jpg" alt="Filme 1" />
           <h3>Beekeeper</h3>
-          <button class="botao-saiba-mais">Saiba mais</button>
+          <div class="horarios">
+            <button onclick="adicionarAoCarrinho('Beekeeper - 15:00')">15:00</button>
+            <button onclick="adicionarAoCarrinho('Beekeeper - 18:00')">18:00</button>
+          </div>
         </div>
 
         <div class="filme">
           <img src="../assets/images/premonicaoo.jpg" alt="Filme 2" />
           <h3>Premonição 6</h3>
-          <button class="botao-saiba-mais">Saiba mais</button>
+          <div class="horarios">
+            <button onclick="adicionarAoCarrinho('Premonição - 15:00')">15:00</button>
+            <button onclick="adicionarAoCarrinho('Premonição - 18:00')">18:00</button>
+          </div>
         </div>
 
         <div class="filme">
           <img src="../assets/images/joker.jpg" alt="Filme 3" />
           <h3>Joker</h3>
-          <button class="botao-saiba-mais">Saiba mais</button>
+          <div class="horarios">
+            <button onclick="adicionarAoCarrinho('Joker - 15:00')">15:00</button>
+            <button onclick="adicionarAoCarrinho('joker - 18:00')">18:00</button>
+          </div>
         </div>
 
         <div class="filme">
           <img src="../assets/images/avengersendgame.jpg" alt="Filme 4" />
           <h3>Avengers</h3>
-          <button class="botao-saiba-mais">Saiba mais</button>
+          <div class="horarios">
+            <button onclick="adicionarAoCarrinho('avengers - 15:00')">15:00</button>
+            <button onclick="adicionarAoCarrinho('avengers - 18:00')">18:00</button>
+          </div>
         </div>
 
         <div class="filme">
           <img src="../assets/images/guardioesdagalaxia.jpg" alt="Filme 5" />
           <h3>Guardiões Das Galaxias</h3>
-          <button class="botao-saiba-mais">Saiba mais</button>
+          <div class="horarios">
+            <button onclick="adicionarAoCarrinho('Guardiões Das Galaxias - 15:00')">15:00</button>
+            <button onclick="adicionarAoCarrinho('Guardiões Das Galaxias - 18:00')">18:00</button>
+          </div>
         </div>
       </div>
     </main>
+
+    <div id="carrinho" class="carrinho">
+      <h2>🛒  Carrinho</h2>
+      <ul id="lista-carrinho"></ul>
+      <button onclick="fecharCarrinho()">Fechar</button>
+    </div>
+    
 
     <footer class="rodape">
       <p>Desenvolvido por André Felipe e Caio Borba.</p>
     </footer>
 
-    <div id="alerta" class="alerta">
-      <p class="mensagem-alerta">Em breve mais informações sobre este filme!</p>
-      <button class="btn-alerta" onclick="fecharAlerta()">OK</button>
-    </div>
-
     <script>
-  // Seleciona todos os elementos com a classe "botao-saiba-mais"
-  const botoes = document.querySelectorAll(".botao-saiba-mais");
-
-  // Para cada botão, adiciona o evento de clique
-  botoes.forEach(function(botao) {
-    botao.onclick = function() {
-      alert("Em breve mais informações sobre este filme!");
-    };
-  });
-
-  function mostrarAlerta(mensagem) {
-    const alerta = document.getElementById("alerta");
-    const texto = alerta.querySelector(".mensagem-alerta");
-    texto.textContent = mensagem; // Modifica a mensagem conforme o texto passado
-    alerta.style.display = "block"; // Exibe o alerta
-  }
-
-  
-</script>
-
-
+      let carrinho = [];
+    
+      function adicionarAoCarrinho(filme) {
+        carrinho.push(filme);
+        atualizarCarrinho();
+        mostrarCarrinho();
+      }
+    
+      function atualizarCarrinho() {
+        const lista = document.getElementById("lista-carrinho");
+        const contador = document.getElementById("contador-carrinho");
+        lista.innerHTML = "";
+        carrinho.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.textContent = item + " ";
+          const btn = document.createElement("button");
+          btn.textContent = "Remover";
+          btn.onclick = () => removerDoCarrinho(index);
+          li.appendChild(btn);
+          lista.appendChild(li);
+        });
+        contador.textContent = carrinho.length;
+      }
+    
+      function removerDoCarrinho(index) {
+        carrinho.splice(index, 1);
+        atualizarCarrinho();
+      }
+    
+      function mostrarCarrinho() {
+        document.getElementById("carrinho").style.display = "block";
+      }
+    
+      function fecharCarrinho() {
+        document.getElementById("carrinho").style.display = "none";
+      }
+    </script>
+    
   </body>
 </html>
 
