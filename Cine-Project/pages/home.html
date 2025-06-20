@@ -44,14 +44,18 @@
 
     <!-- Seção de filmes -->
     <main class="filmes">
-      <h2>Filmes em Cartaz</h2>
+      <h2>📽️ Filmes em Cartaz 📽️</h2>
       <div class="grade-filmes">
         <div class="filme">
           <img src="../assets/images/beekeeper.jpg" alt="Filme 1" />
           <h3>Beekeeper</h3>
           <div class="horarios">
-            <button onclick="adicionarAoCarrinho('Beekeeper - 15:00')">15:00</button>
-            <button onclick="adicionarAoCarrinho('Beekeeper - 18:00')">18:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('Beekeeper - 15:00')">15:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('Beekeeper - 18:00')">18:00</button>
+          </div>
+          <button class="btn-saiba-mais" onclick="mostrarDescricao(this)">Saiba Mais</button>
+          <div class="descricao-filme">
+            <p>Um ex-agente da CIA enfrenta uma conspiração secreta. Ação explosiva do começo ao fim.</p>
           </div>
         </div>
 
@@ -59,8 +63,12 @@
           <img src="../assets/images/premonicaoo.jpg" alt="Filme 2" />
           <h3>Premonição 6</h3>
           <div class="horarios">
-            <button onclick="adicionarAoCarrinho('Premonição - 15:00')">15:00</button>
-            <button onclick="adicionarAoCarrinho('Premonição - 18:00')">18:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('Premonição - 15:00')">15:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('Premonição - 18:00')">18:00</button>
+          </div>
+          <button class="btn-saiba-mais" onclick="mostrarDescricao(this)">Saiba Mais</button>
+          <div class="descricao-filme">
+            <p>Uma jovem, atormentada por pesadelos, tenta evitar a morte de sua família, descobrindo um mistério sobre as origens das premonições na franquia.</p>
           </div>
         </div>
 
@@ -68,8 +76,12 @@
           <img src="../assets/images/joker.jpg" alt="Filme 3" />
           <h3>Joker</h3>
           <div class="horarios">
-            <button onclick="adicionarAoCarrinho('Joker - 15:00')">15:00</button>
-            <button onclick="adicionarAoCarrinho('joker - 18:00')">18:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('Joker - 15:00')">15:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('joker - 18:00')">18:00</button>
+          </div>
+          <button class="btn-saiba-mais" onclick="mostrarDescricao(this)">Saiba Mais</button>
+          <div class="descricao-filme">
+            <p>O filme, dirigido por Todd Phillips, é descrito como um musical dramático que explora a relação de Arthur com a personagem Arlequina, interpretada por Lady Gaga, no Asilo Arkham.</p>
           </div>
         </div>
 
@@ -77,8 +89,12 @@
           <img src="../assets/images/avengersendgame.jpg" alt="Filme 4" />
           <h3>Avengers</h3>
           <div class="horarios">
-            <button onclick="adicionarAoCarrinho('avengers - 15:00')">15:00</button>
-            <button onclick="adicionarAoCarrinho('avengers - 18:00')">18:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('avengers - 15:00')">15:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('avengers - 18:00')">18:00</button>
+          </div>
+          <button class="btn-saiba-mais" onclick="mostrarDescricao(this)">Saiba Mais</button>
+          <div class="descricao-filme">
+            <p>O filme foca na união do Homem de Ferro, Capitão América, Thor, Hulk, Viúva Negra e Gavião Arqueiro para deter Loki, irmão de Thor, que planeja dominar a Terra. </p>
           </div>
         </div>
 
@@ -86,8 +102,12 @@
           <img src="../assets/images/guardioesdagalaxia.jpg" alt="Filme 5" />
           <h3>Guardiões Das Galaxias</h3>
           <div class="horarios">
-            <button onclick="adicionarAoCarrinho('Guardiões Das Galaxias - 15:00')">15:00</button>
-            <button onclick="adicionarAoCarrinho('Guardiões Das Galaxias - 18:00')">18:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('Guardiões Das Galaxias - 15:00')">15:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('Guardiões Das Galaxias - 18:00')">18:00</button>
+          </div>
+          <button class="btn-saiba-mais" onclick="mostrarDescricao(this)">Saiba Mais</button>
+          <div class="descricao-filme">
+            <p>É um filme de aventura e ficção científica da Marvel, lançado em 2014, que acompanha as aventuras de um grupo improvável de heróis intergalácticos</p>
           </div>
         </div>
       </div>
@@ -96,21 +116,44 @@
     <div id="carrinho" class="carrinho">
       <h2>🛒  Carrinho</h2>
       <ul id="lista-carrinho"></ul>
-      <button onclick="fecharCarrinho()">Fechar</button>
-    </div>
-    
+      <button id="FecharCarrinho" onclick="fecharCarrinho()">Fechar</button>
+    </div> 
 
-    <footer class="rodape">
-      <p>Desenvolvido por André Felipe e Caio Borba.</p>
-    </footer>
+    <!-- Aqui vamos usar um modal para que o usario possa selecionar o seu tipo de ingresso desejado... -->
+    <div id="modal-ingresso" class="modal">
+      <div class="modal-conteudo">
+        <h3>Selecione o tipo de ingresso</h3>
+        <p id="filmeSelecionado"></p>
+        <div class="botoes-ingresso">
+          <button onclick="confirmarIngresso('Inteira')">Inteira</button>
+          <button onclick="confirmarIngresso('Meia')">Meia Entrada</button>
+        </div>
+        <button class="fechar-modal" onclick="fecharModal()">Cancelar</button>
+      </div>
 
     <script>
-      let carrinho = [];
     
-      function adicionarAoCarrinho(filme) {
-        carrinho.push(filme);
+      let carrinho = [];
+      let filmeSelecionadoHorario = "";
+
+      function adicionarAoCarrinho(filmeComHorario) {
+        filmeSelecionadoHorario = filmeComHorario;
+        document.getElementById("filmeSelecionado").textContent = filmeComHorario;
+        document.getElementById("modal-ingresso").style.display = "flex";
+      }
+
+      // Alguma das funçoes abaixo foram solicitadas por IA , mas buscamos entender e aprender como foram geradas!
+      // Estou tendo algumas dificuldades com a linguagem ainda, principalmente na hora de chamar a função. 
+
+      function confirmarIngresso(tipo) {
+        carrinho.push(`${filmeSelecionadoHorario} - ${tipo}`);
         atualizarCarrinho();
+        fecharModal();
         mostrarCarrinho();
+      }
+
+      function fecharModal() {
+        document.getElementById("modal-ingresso").style.display = "none";
       }
     
       function atualizarCarrinho() {
@@ -122,6 +165,7 @@
           li.textContent = item + " ";
           const btn = document.createElement("button");
           btn.textContent = "Remover";
+          btn.className = "btn-remover"; // <-- adiciona a classe
           btn.onclick = () => removerDoCarrinho(index);
           li.appendChild(btn);
           lista.appendChild(li);
@@ -141,6 +185,17 @@
       function fecharCarrinho() {
         document.getElementById("carrinho").style.display = "none";
       }
+
+      function mostrarDescricao(botao) {
+        const descricao = botao.nextElementSibling;
+        if (descricao.style.display === "block") {
+          descricao.style.display = "none";
+          botao.textContent = "Saiba Mais";
+        } else {
+          descricao.style.display = "block";
+          botao.textContent = "Ocultar";
+        }
+}
     </script>
     
   </body>

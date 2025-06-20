@@ -29,6 +29,10 @@
         </form>
       </div>
 
+      <div class="carrinho-icone">
+        <a href="#" onclick="mostrarCarrinho()">🛒 Ingressos (<span id="contador-carrinho">0</span>)</a>
+      </div>
+
 
       <!-- Área de login/registro -->
       <div class="login">
@@ -43,44 +47,86 @@
         <div class="filme">
           <img src="../assets/images/F1.jpg" alt="Filme 1" />
           <h3>F1 - O Filme</h3>
-          <button class="botao-saiba-mais">Saiba mais</button>
+          <div class="horarios">
+            <button onclick="adicionarAoCarrinho('F1 - O Filme - 15:00')">15:00</button>
+            <button onclick="adicionarAoCarrinho('F1 - O Filme - 18:00')">18:00</button>
+          </div>
         </div>
 
         <div class="filme">
           <img src="../assets/images/LiLoStitch.jpg" alt="Filme 2" />
           <h3>Lilo Stitch</h3>
-          <button class="botao-saiba-mais">Saiba mais</button>
+          <div class="horarios">
+            <button onclick="adicionarAoCarrinho('Lilo Stitch - 15:00')">15:00</button>
+            <button onclick="adicionarAoCarrinho('Lilo Stitch - 18:00')">18:00</button>
+          </div>
         </div>
 
         <div class="filme">
           <img src="../assets/images/Dragao.jpg" alt="Filme 3" />
           <h3>Como treinar seu Dragão</h3>
-          <button class="botao-saiba-mais">Saiba mais</button>
+          <div class="horarios">
+            <button onclick="adicionarAoCarrinho('Como Treinar seu dragão - 15:00')">15:00</button>
+            <button onclick="adicionarAoCarrinho('Como Treinar seu dragão - 18:00')">18:00</button>
+          </div>
         </div>
 
         <div class="filme">
           <img src="../assets/images/MissaoImpossivel.jpg" alt="Filme 4" />
           <h3>Missão Impossivel</h3>
-          <button class="botao-saiba-mais">Saiba mais</button>
+          <div class="horarios">
+            <button onclick="adicionarAoCarrinho('Missão Impossivel - 15:00')">15:00</button>
+            <button onclick="adicionarAoCarrinho('Missão Impossivel - 18:00')">18:00</button>
+          </div>
         </div>
 
         <div class="filme">
           <img src="../assets/images/QuartetoFantastico.jpg" alt="Filme 5" />
           <h3>Quarteto Fantastico: Primeiros Passos </h3>
-          <button class="botao-saiba-mais">Saiba mais</button>
+          <div class="horarios">
+            <button onclick="adicionarAoCarrinho('Quarteto Fantastico: Primeiros Passos - 15:00')">15:00</button>
+            <button onclick="adicionarAoCarrinho('Quarteto Fantastico: Primeiros Passos - 18:00')">18:00</button>
+          </div>
         </div>
 
         <script>
-  // Seleciona todos os elementos com a classe "botao-saiba-mais"
-  const botoes = document.querySelectorAll(".botao-saiba-mais");
-
-  // Para cada botão, adiciona o evento de clique
-  botoes.forEach(function(botao) {
-    botao.onclick = function() {
-      alert("Em breve mais informações sobre este filme!");
-    };
-  });
-</script>
+          let carrinho = [];
+    
+      function adicionarAoCarrinho(filme) {
+        carrinho.push(filme);
+        atualizarCarrinho();
+        mostrarCarrinho();
+      }
+    
+      function atualizarCarrinho() {
+        const lista = document.getElementById("lista-carrinho");
+        const contador = document.getElementById("contador-carrinho");
+        lista.innerHTML = "";
+        carrinho.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.textContent = item + " ";
+          const btn = document.createElement("button");
+          btn.textContent = "Remover";
+          btn.onclick = () => removerDoCarrinho(index);
+          li.appendChild(btn);
+          lista.appendChild(li);
+        });
+        contador.textContent = carrinho.length;
+      }
+    
+      function removerDoCarrinho(index) {
+        carrinho.splice(index, 1);
+        atualizarCarrinho();
+      }
+    
+      function mostrarCarrinho() {
+        document.getElementById("carrinho").style.display = "block";
+      }
+    
+      function fecharCarrinho() {
+        document.getElementById("carrinho").style.display = "none";
+      }
+        </script>
 
 
   </body>
