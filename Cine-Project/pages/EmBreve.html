@@ -48,8 +48,12 @@
           <img src="../assets/images/F1.jpg" alt="Filme 1" />
           <h3>F1 - O Filme</h3>
           <div class="horarios">
-            <button onclick="adicionarAoCarrinho('F1 - O Filme - 15:00')">15:00</button>
-            <button onclick="adicionarAoCarrinho('F1 - O Filme - 18:00')">18:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('F1 - O Filme - 15:00')">15:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('F1 - O Filme - 18:00')">18:00</button>
+          </div>
+          <button class="btn-saiba-mais" onclick="mostrarDescricao(this)">Saiba Mais</button>
+          <div class="descricao-filme">
+            <p>Repleto de imagens inéditas, entrevistas e adrenalina, oferece uma visão íntima do esporte de elite e sua complexa rede de emoções, rivalidades e glória.</p>
           </div>
         </div>
 
@@ -57,8 +61,12 @@
           <img src="../assets/images/LiLoStitch.jpg" alt="Filme 2" />
           <h3>Lilo Stitch</h3>
           <div class="horarios">
-            <button onclick="adicionarAoCarrinho('Lilo Stitch - 15:00')">15:00</button>
-            <button onclick="adicionarAoCarrinho('Lilo Stitch - 18:00')">18:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('Lilo Stitch - 15:00')">15:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('Lilo Stitch - 18:00')">18:00</button>
+          </div>
+          <button class="btn-saiba-mais" onclick="mostrarDescricao(this)">Saiba Mais</button>
+          <div class="descricao-filme">
+            <p>Uma garotinha havaiana chamada Lilo adota um "cachorrinho" estranho que, na verdade, é um experimento alienígena fugitivo chamado Stitch. Juntos, eles aprendem o verdadeiro significado de família</p>
           </div>
         </div>
 
@@ -66,8 +74,12 @@
           <img src="../assets/images/Dragao.jpg" alt="Filme 3" />
           <h3>Como treinar seu Dragão</h3>
           <div class="horarios">
-            <button onclick="adicionarAoCarrinho('Como Treinar seu dragão - 15:00')">15:00</button>
-            <button onclick="adicionarAoCarrinho('Como Treinar seu dragão - 18:00')">18:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('Como Treinar seu dragão - 15:00')">15:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('Como Treinar seu dragão - 18:00')">18:00</button>
+          </div>
+          <button class="btn-saiba-mais" onclick="mostrarDescricao(this)">Saiba Mais</button>
+          <div class="descricao-filme">
+            <p>Em uma ilha viking onde dragões são inimigos, o jovem Soluço desafia as tradições ao fazer amizade com um dragão ferido chamado Banguela.</p>
           </div>
         </div>
 
@@ -75,8 +87,12 @@
           <img src="../assets/images/MissaoImpossivel.jpg" alt="Filme 4" />
           <h3>Missão Impossivel</h3>
           <div class="horarios">
-            <button onclick="adicionarAoCarrinho('Missão Impossivel - 15:00')">15:00</button>
-            <button onclick="adicionarAoCarrinho('Missão Impossivel - 18:00')">18:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('Missão Impossivel - 15:00')">15:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('Missão Impossivel - 18:00')">18:00</button>
+          </div>
+          <button class="btn-saiba-mais" onclick="mostrarDescricao(this)">Saiba Mais</button>
+          <div class="descricao-filme">
+            <p>O agente Ethan Hunt é acusado injustamente de traição e precisa correr contra o tempo para provar sua inocência, enfrentando conspirações, armadilhas e missões perigosas. </p>
           </div>
         </div>
 
@@ -84,49 +100,100 @@
           <img src="../assets/images/QuartetoFantastico.jpg" alt="Filme 5" />
           <h3>Quarteto Fantastico: Primeiros Passos </h3>
           <div class="horarios">
-            <button onclick="adicionarAoCarrinho('Quarteto Fantastico: Primeiros Passos - 15:00')">15:00</button>
-            <button onclick="adicionarAoCarrinho('Quarteto Fantastico: Primeiros Passos - 18:00')">18:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('Quarteto Fantastico: Primeiros Passos - 15:00')">15:00</button>
+            <button class="btn-add-horario" onclick="adicionarAoCarrinho('Quarteto Fantastico: Primeiros Passos - 18:00')">18:00</button>
+          </div>
+          <button class="btn-saiba-mais" onclick="mostrarDescricao(this)">Saiba Mais</button>
+          <div class="descricao-filme">
+            <p>Após um acidente espacial, quatro cientistas ganham superpoderes: elasticidade, invisibilidade, força e controle do fogo. Juntos, eles formam o Quarteto Fantástico e enfrentam o vilão Dr. Destino, lidando com os desafios de se tornarem heróis e manterem a união.</p>
           </div>
         </div>
+      </div>
+    </main>
+
+    <div id="carrinho" class="carrinho">
+      <h2>🛒  Carrinho</h2>
+      <ul id="lista-carrinho"></ul>
+      <button id="FecharCarrinho" onclick="fecharCarrinho()">Fechar</button>
+    </div> 
+
+    <!-- Aqui vamos usar um modal para que o usario possa selecionar o seu tipo de ingresso desejado... -->
+    <div id="modal-ingresso" class="modal">
+      <div class="modal-conteudo">
+        <h3>Selecione o tipo de ingresso</h3>
+        <p id="filmeSelecionado"></p>
+        <div class="botoes-ingresso">
+          <button onclick="confirmarIngresso('Inteira')">Inteira</button>
+          <button onclick="confirmarIngresso('Meia')">Meia Entrada</button>
+        </div>
+        <button class="fechar-modal" onclick="fecharModal()">Cancelar</button>
+      </div>
 
         <script>
           let carrinho = [];
+          let filmeSelecionadoHorario = "";
     
-      function adicionarAoCarrinho(filme) {
-        carrinho.push(filme);
-        atualizarCarrinho();
-        mostrarCarrinho();
-      }
+          function adicionarAoCarrinho(filmeComHorario) {
+            filmeSelecionadoHorario = filmeComHorario;
+            document.getElementById("filmeSelecionado").textContent = filmeComHorario;
+            document.getElementById("modal-ingresso").style.display = "flex";
+          }
+
+          // Alguma das funçoes abaixo foram solicitadas por IA , mas buscamos entender e aprender como foram geradas!
+          // Estou tendo algumas dificuldades com a linguagem ainda, principalmente na hora de chamar a função. 
+
+          function confirmarIngresso(tipo) {
+            carrinho.push(`${filmeSelecionadoHorario} - ${tipo}`);
+            atualizarCarrinho();
+            fecharModal();
+            mostrarCarrinho();
+          }
+
+          function fecharModal() {
+            document.getElementById("modal-ingresso").style.display = "none";
+          }
+
+          function atualizarCarrinho() {
+            const lista = document.getElementById("lista-carrinho");
+            const contador = document.getElementById("contador-carrinho");
+            lista.innerHTML = "";
+            carrinho.forEach((item, index) => {
+              const li = document.createElement("li");
+              li.textContent = item + " ";
+              const btn = document.createElement("button");
+              btn.textContent = "Remover";
+              btn.className = "btn-remover"; // <-- adiciona a classe
+              btn.onclick = () => removerDoCarrinho(index);
+              li.appendChild(btn);
+              lista.appendChild(li);
+            });
+            contador.textContent = carrinho.length;
+          }
     
-      function atualizarCarrinho() {
-        const lista = document.getElementById("lista-carrinho");
-        const contador = document.getElementById("contador-carrinho");
-        lista.innerHTML = "";
-        carrinho.forEach((item, index) => {
-          const li = document.createElement("li");
-          li.textContent = item + " ";
-          const btn = document.createElement("button");
-          btn.textContent = "Remover";
-          btn.onclick = () => removerDoCarrinho(index);
-          li.appendChild(btn);
-          lista.appendChild(li);
-        });
-        contador.textContent = carrinho.length;
-      }
+          function removerDoCarrinho(index) {
+            carrinho.splice(index, 1);
+            atualizarCarrinho();
+          }
     
-      function removerDoCarrinho(index) {
-        carrinho.splice(index, 1);
-        atualizarCarrinho();
-      }
+          function mostrarCarrinho() {
+            document.getElementById("carrinho").style.display = "block";
+          }
     
-      function mostrarCarrinho() {
-        document.getElementById("carrinho").style.display = "block";
-      }
-    
-      function fecharCarrinho() {
-        document.getElementById("carrinho").style.display = "none";
-      }
-        </script>
+          function fecharCarrinho() {
+            document.getElementById("carrinho").style.display = "none";
+          }
+
+          function mostrarDescricao(botao) {
+            const descricao = botao.nextElementSibling;
+            if (descricao.style.display === "block") {
+              descricao.style.display = "none";
+              botao.textContent = "Saiba Mais";
+            } else {
+              descricao.style.display = "block";
+              botao.textContent = "Ocultar";
+            }
+          }
+      </script>
 
 
   </body>
